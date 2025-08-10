@@ -11,7 +11,7 @@ export const Users = () => {
     useEffect(() => {
     const token = localStorage.getItem('token');
 
-    axios.get('http://localhost:3000/api/v1/user/dashboard', {
+    axios.get('https://backend-server-pta.onrender.com/api/v1/user/dashboard', {
       headers: {
         Authorization: `Bearer ${token}`
       }
@@ -44,7 +44,7 @@ function User({user}) {
         <div className="  bg-red-200  w-120 mt-20 ml-120 pt-10 pb-6 rounded-xl text-lg">
                     <div className="flex justify-between items-center mb-8">
                         <div className="flex justify-center items-center gap-3">
-                            <img className="h-15 w-15 p-1 rounded-full object-cover" src={`http://localhost:3000/uploads/${user.profileImage}`} alt={`${user.firstname} ${user.lastname}`}
+                            <img className="h-15 w-15 p-1 rounded-full object-cover" src={`https://backend-server-pta.onrender.com/uploads/${user.profileImage}`} alt={`${user.firstname} ${user.lastname}`}
 />
                             <div>
                                 <h3 className="text-2xl font-semibold text-gray-900">{user.firstname} {user.lastname}</h3>

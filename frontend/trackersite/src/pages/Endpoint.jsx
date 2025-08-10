@@ -25,7 +25,7 @@ export const Endpoint = ()=>{
         if(tenureparam){
             setTenure(tenureparam)
 
-            axios.get('http://localhost:3000/api/v1/user/endpoint',{
+            axios.get('https://backend-server-pta.onrender.com/api/v1/user/endpoint',{
                 params:{tenure:tenureparam}
             })
             .then((response)=>{

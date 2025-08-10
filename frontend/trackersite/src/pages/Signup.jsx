@@ -30,7 +30,7 @@ export const Signup = () => {
       if(profileImage)
       formdata.append("profileImage",profileImage);
     
-      const response = await axios.post("http://localhost:3000/api/v1/user/signup",
+      const response = await axios.post("https://backend-server-pta.onrender.com/api/v1/user/signup",
         formdata,
         {
           headers: {"Content-Type":"multipart/form-data"}
