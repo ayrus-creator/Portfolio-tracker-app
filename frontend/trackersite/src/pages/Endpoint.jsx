@@ -25,7 +25,7 @@ export const Endpoint = ()=>{
         if(tenureparam){
             setTenure(tenureparam)
 
-            axios.get('https://backend-server-pta.onrender.com/api/v1/user/endpoint',{
+            axios.get("https://backend-server-pta.onrender.com/api/v1/user/endpoint",{
                 params:{tenure:tenureparam}
             })
             .then((response)=>{
@@ -33,7 +33,10 @@ export const Endpoint = ()=>{
                 const values = response.data.map((item)=>item.value)
                 setCategories(labels);
                 setData(values);
-            })
+            }).catch(err => {
+               console.log('Error response data:', err.response?.data);
+               console.log('Error status:', err.response?.status);
+               alert('cannot get graph: ' + (err.response?.data?.message || err.message))})
         }
     },[])
     return <div>

@@ -38,7 +38,7 @@ export const Signup = () => {
       );
       localStorage.setItem("token", response.data.token);
       navigate("/dashboard");
-    }catch (err) {
+    } catch (err) {
   console.log('Error response data:', err.response?.data);
   console.log('Error status:', err.response?.status);
   alert('Signup failed: ' + (err.response?.data?.message || err.message));
