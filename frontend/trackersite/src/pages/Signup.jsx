@@ -38,10 +38,12 @@ export const Signup = () => {
       );
       localStorage.setItem("token", response.data.token);
       navigate("/dashboard");
-    }catch(err){
-      console.log(err);
-      alert("Signup failed")
-    }
+    }catch (err) {
+  console.log('Error response data:', err.response?.data);
+  console.log('Error status:', err.response?.status);
+  alert('Signup failed: ' + (err.response?.data?.message || err.message));
+}
+
 
 
 
@@ -57,7 +59,7 @@ export const Signup = () => {
         <InputBox onChange = {(e)=>{setemail(e.target.value)} }placeholder="john@gmail.com" label={"Email"} />
         <InputBox onChange = {(e)=>{setPassword(e.target.value)} }placeholder="John@123"  label={"Password"} type="password" />
         <InputBox onChange = {(e)=>{setphone(e.target.value)} }placeholder="9823586727" label={"Phone number"} />
-        <InputBox onChange = {(e)=>{setdateofbirth(e.target.value)} }placeholder="yyyy-MM--DD" label={"date of birth"} />
+        <InputBox onChange = {(e)=>{setdateofbirth(e.target.value)} }placeholder="yyyy-MM-DD" label={"date of birth"} />
         
         <div className="text-left mt-2">
           <label className="text-sm font-medium text-left py-2">Profile Image</label>
