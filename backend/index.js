@@ -5,11 +5,12 @@ const mongoose = require('mongoose')
 const rootRouter = require('./routes/userRoutes');
 const dotenv = require('dotenv')
 const cors = require("cors")
+const path = require("path");
 
 app.use(cors());
 dotenv.config();
 
-
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 app.use(express.json());
 app.use("/api/v1/user", rootRouter);
 

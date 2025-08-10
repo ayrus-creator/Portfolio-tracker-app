@@ -2,11 +2,12 @@ import { Button } from "./Button"
 import { useNavigate } from "react-router-dom"
 
 
-export const Appbar = () => {
+
+export function Appbar ({user}) {
     const navigate = useNavigate()
-    return <div className="shadow h-16 flex justify-between">
+    return <div user={user} className="shadow h-16 flex justify-between">
         <div className="flex flex-col justify-center h-full ml-4">
-          Portfolio-Tracker
+          Portfolio-Tracker 
         </div>
         <div className="flex">
             <div className="flex flex-col justify-center h-full mr-2 py-6  px-6 me-1 mb-1 ">
